@@ -1,7 +1,15 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
+import * as axe from 'react-axe';
 
 function App() {
+
+  if (process.env.NODE_ENV !== 'production') {
+    axe(React, ReactDOM, 1000);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
